@@ -8,3 +8,4 @@ a=`ls | wc -l`
                  echo "The File Does Not Exist"
               fi
 
+echo "We are testing GIT"
