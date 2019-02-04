@@ -9,3 +9,4 @@ a=`ls | wc -l`
               fi
 
 echo "We are testing GIT"
+echo "Second change"
