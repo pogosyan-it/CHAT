@@ -10,18 +10,14 @@ echo $res1
 if [ $res1 -gt 1 ]
 then
       echo "См. вложения" | mail -s "Отсканированы, не в манифесте." -a $dir1/"$curdate"_Not_in_Manifest.txt -r "gsot@corp.ws" smk@dmcorp.ru
-      echo "См. вложения" | mail -s "Отсканированы, не в манифесте." -a $dir1/"$curdate"_Not_in_Manifest.txt -r "gsot@corp.ws" archive@dmcorp.ru 
 else
       echo "За $curdate все накладные в манифестах" | mail -s "Отсканированы, не в манифесте." -r "gsot@corp.ws" smk@dmcorp.ru
-      echo "За $curdate все накладные в манифестах" | mail -s "Отсканированы, не в манифесте." -r "gsot@corp.ws" archive@dmcorp.ru 
       rm $dir1/"$curdate"_Not_in_Manifest.txt
 fi           
 if [ $res2 -gt 1 ]
 then
       echo "См. вложения" | mail -s "Накладные в 2-х и более манифестах" -a $dir2/"$curdate"_2_Manifest.txt -r "gsot@corp.ws" smk@dmcorp.ru 
-      echo "См. вложения" | mail -s "Накладные в 2-х и более манифестах" -a $dir2/"$curdate"_2_Manifest.txt -r "gsot@corp.ws" archive@dmcorp.ru 
 else
       echo "За $curdate нет накладных одновременно находящихся в 2-х и более манифестах" | mail -s "Накладные в 2-х и более манифестах" -r "gsot@corp.ws" smk@dmcorp.ru
-      echo "За $curdate нет накладных одновременно находящихся в 2-х и более манифестах" | mail -s "Накладные в 2-х и более манифестах" -r "gsot@corp.ws" archive@dmcorp.ru
       rm $dir2/"$curdate"_2_Manifest.txt
 fi
